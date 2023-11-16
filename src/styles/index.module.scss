@@ -1,0 +1,33 @@
+@import "../styles/breakpoints.scss";
+
+.flagAdamContainer {
+  width: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.flagAdamSecond {
+  top: 0; /* Adjust the top position for the first element as needed */
+  position: absolute;
+  color: rgba(56, 56, 58, 1);
+}
+
+.flagAdamFirst {
+  top: 7px;
+  left: 7px; /* Adjust the top position for the second element as needed */
+  position: absolute;
+  color: rgba(234, 118, 118, 0.5);
+}
+
+@include media("<=600px") {
+  .flagAdamFirst,
+  .flagAdamSecond {
+    font-size: 4.2em;
+  }
+}
+@include media(">600px") {
+  .flagAdamFirst,
+  .flagAdamSecond {
+    font-size: 7em;
+  }
+}

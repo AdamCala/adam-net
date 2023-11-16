@@ -2,8 +2,7 @@
 * {
   margin: 0%;
   height: 200vh;
-  background-image: url("../../public/assets/noise.svg");
-  background-size: cover;
+  overflow-x: hidden;
 }
 *::-webkit-scrollbar {
   display: none;
@@ -20,10 +19,13 @@
 
 // Gradient
 .background-gradient {
-  background: linear-gradient(
-    180deg,
-    rgba(108, 131, 154, 1) 0%,
-    rgba(163, 174, 183, 1) 50%,
-    rgba(228, 225, 218, 1) 85%
-  );
+  background-image: linear-gradient(
+      180deg,
+      rgba(108, 131, 154, 1) 0%,
+      rgba(163, 174, 183, 1) 50%,
+      rgba(228, 225, 218, 1) 85%
+    ),
+    url("../../public/assets/noise.svg");
+  background-size: cover;
+  background-blend-mode: hard-light;
 }
