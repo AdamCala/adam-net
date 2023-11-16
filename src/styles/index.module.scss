@@ -1,33 +1,66 @@
 @import "../styles/breakpoints.scss";
 
 .flagAdamContainer {
-  width: 100vh;
+  height: 50%;
   position: relative;
   overflow: hidden;
+  display: flex;
+  justify-content: end;
+  align-items: center;
 }
 
-.flagAdamSecond {
-  top: 0; /* Adjust the top position for the first element as needed */
-  position: absolute;
+.flagAdam {
   color: rgba(56, 56, 58, 1);
+  text-shadow: 4px 4px 0px rgba(234, 118, 118, 0.5);
+  height: fit-content;
+  width: fit-content;
+  margin-top: 60vh;
+  margin-right: 10vh;
 }
 
-.flagAdamFirst {
-  top: 7px;
-  left: 7px; /* Adjust the top position for the second element as needed */
-  position: absolute;
-  color: rgba(234, 118, 118, 0.5);
+.subtextAdamContainer {
+  height: fit-content;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10vh;
 }
 
+.subtextAdam {
+  width: fit-content;
+  height: fit-content;
+  color: rgba(56, 56, 58, 1);
+  text-shadow: 4px 4px 0px rgba(234, 118, 118, 0.5);
+}
+
+// MOBILE
 @include media("<=600px") {
-  .flagAdamFirst,
-  .flagAdamSecond {
-    font-size: 4.2em;
+  .flagAdam {
+    font-size: 3em;
+    margin-top: 0;
+    margin-right: 0;
+  }
+  .flagAdamContainer {
+    flex-direction: column-reverse;
+    justify-content: center;
+    padding-top: 3em;
+  }
+  .subtextAdam {
+    font-size: 1.2em;
+    margin-left: 3.5em;
+  }
+  .subtextAdamContainer {
+    padding-top: 3em;
+    gap: 5vh;
   }
 }
+
+// DESKTOP
 @include media(">600px") {
-  .flagAdamFirst,
-  .flagAdamSecond {
+  .flagAdam {
     font-size: 7em;
+  }
+  .subtextAdam {
+    font-size: 3em;
   }
 }
