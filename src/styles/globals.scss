@@ -1,0 +1,29 @@
+// Scroll
+* {
+  margin: 0%;
+  height: 200vh;
+  background-image: url("../../public/assets/noise.svg");
+  background-size: cover;
+}
+*::-webkit-scrollbar {
+  display: none;
+}
+
+.background-gradient {
+  height: 200vh;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.background-gradient::-webkit-scrollbar {
+  display: none;
+}
+
+// Gradient
+.background-gradient {
+  background: linear-gradient(
+    180deg,
+    rgba(108, 131, 154, 1) 0%,
+    rgba(163, 174, 183, 1) 50%,
+    rgba(228, 225, 218, 1) 85%
+  );
+}
