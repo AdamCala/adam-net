@@ -1,4 +1,5 @@
 import Footer from "@/components/footer/footer";
+import Navbar from "@/components/navbar/navbar";
 import "@/styles/globals.scss";
 import type { Metadata } from "next";
 
@@ -19,6 +20,7 @@ export default function RootLayout({
       </head>
       <body>
         <div className="page">
+          <Navbar />
           <div className="background-gradient">{children}</div>
           <Footer />
         </div>

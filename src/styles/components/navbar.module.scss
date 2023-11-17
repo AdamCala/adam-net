@@ -1,0 +1,29 @@
+@import "../breakpoints.scss";
+
+.navbarContainer {
+  position: absolute;
+  top: 102vh;
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  gap: 10vh;
+}
+
+.navbarLink {
+  color: rgba(56, 56, 58, 1);
+  text-shadow: 3px 3px 0px rgba(234, 118, 118, 0.5);
+  font-size: 3vh;
+  text-decoration: none;
+}
+
+// MOBILE
+@include media("<=600px") {
+  .navbarContainer {
+    top: 109vh;
+    gap: 5vh;
+  }
+  .navbarLink {
+    font-size: 2.4vh;
+  }
+}
