@@ -1,7 +1,24 @@
 @import "../styles/breakpoints.scss";
 
+.main {
+  height: 100vh;
+}
+.about {
+  height: 100vh;
+}
+
+.scrollButton {
+  width: 5vh;
+  height: 5vh;
+  position: absolute;
+  bottom: 10vh;
+  left: 15vh;
+  overflow: hidden;
+  color: rgba(56, 56, 58, 1);
+}
+
 .flagAdamContainer {
-  height: 50%;
+  height: 100%;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -40,7 +57,7 @@
 // MOBILE
 @include media("<=600px") {
   .flagAdam {
-    font-size: 3em;
+    font-size: 4em;
     margin-top: 0;
     margin-right: 0;
   }
@@ -55,11 +72,16 @@
     gap: 5vh;
   }
   .subtextAdam {
-    font-size: 1.2em;
+    font-size: 1.4em;
     margin-left: 5.5em;
   }
   #subtextAdamSecond {
     margin-left: 7em;
+  }
+  .scrollButton {
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
 }
 

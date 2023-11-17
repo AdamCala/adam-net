@@ -1,20 +1,20 @@
 // Scroll
 * {
   margin: 0%;
-  //   height: 200vh;
-  //   overflow-x: hidden;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 *::-webkit-scrollbar {
-  //   display: none;
+  display: none;
 }
 
 .background-gradient {
   height: 200vh;
-  //   -ms-overflow-style: none;
-  //   scrollbar-width: none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 .background-gradient::-webkit-scrollbar {
-  //   display: none;
+  display: none;
 }
 
 // Gradient
