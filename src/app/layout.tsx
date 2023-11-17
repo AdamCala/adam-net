@@ -1,8 +1,6 @@
+import Footer from "@/components/footer/footer";
 import "@/styles/globals.scss";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -19,8 +17,11 @@ export default function RootLayout({
       <head>
         <meta charSet="utf-8" />
       </head>
-      <body className={inter.className}>
-        <div className="background-gradient">{children}</div>
+      <body>
+        <div className="page">
+          <div className="background-gradient">{children}</div>
+          <Footer />
+        </div>
       </body>
     </html>
   );

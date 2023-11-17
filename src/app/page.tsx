@@ -22,7 +22,12 @@ const page = () => {
           className={`${courier_prime.className} ${styles.subtextAdamContainer}`}
         >
           <p className={`${styles.subtextAdam}`}>I write code</p>
-          <p className={`${styles.subtextAdam}`}>on the internet</p>
+          <p
+            id={`${styles.subtextAdamSecond}`}
+            className={`${styles.subtextAdam}`}
+          >
+            on the internet
+          </p>
         </div>
         <p className={`${styles.flagAdam} `}>Adam Cala</p>
       </div>
