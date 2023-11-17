@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "@/styles/index.module.scss";
 import { Fascinate_Inline } from "next/font/google";
 import { Courier_Prime } from "next/font/google";
@@ -28,6 +28,46 @@ const page = () => {
     window.addEventListener("wheel", handleWheel);
     return () => {
       window.removeEventListener("wheel", handleWheel);
+    };
+  }, []);
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "ArrowDown") {
+        console.log("Arrow key down");
+        setPageState("top");
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
+
+  const touchStartY = useRef<number | null>(null);
+  useEffect(() => {
+    const handleTouchStart = (event: TouchEvent) => {
+      touchStartY.current = event.touches[0].clientY;
+    };
+
+    const handleTouchEnd = (event: TouchEvent) => {
+      if (touchStartY.current !== null) {
+        const touchEndY = event.changedTouches[0].clientY;
+        const deltaY = touchEndY - touchStartY.current;
+
+        if (deltaY < 0) {
+          console.log("Swipe downward");
+          setPageState("top");
+        }
+
+        touchStartY.current = null;
+      }
+    };
+    window.addEventListener("touchstart", handleTouchStart);
+    window.addEventListener("touchend", handleTouchEnd);
+    return () => {
+      window.removeEventListener("touchstart", handleTouchStart);
+      window.removeEventListener("touchend", handleTouchEnd);
     };
   }, []);
 
@@ -66,7 +106,7 @@ const page = () => {
           </div>
           <p className={`${styles.flagAdam} `}>Adam Cala</p>
           <div className={`${styles.scrollButton}`} onClick={handleClick}>
-            <ArrowDownIcon />
+            <ArrowDownIcon className={`${styles.svg}}`} />
           </div>
         </div>
       </div>

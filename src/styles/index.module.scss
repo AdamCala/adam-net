@@ -54,6 +54,14 @@
   margin-left: 5vh;
 }
 
+.scrollButton {
+  color: rgba(56, 56, 58, 1);
+  filter: drop-shadow(2px 2px 2px rgba(234, 118, 118, 0.75));
+}
+
+.scrollButton:hover {
+  offset: 1px;
+}
 // MOBILE
 @include media("<=600px") {
   .flagAdam {
@@ -80,6 +88,7 @@
   }
   .scrollButton {
     width: 100%;
+    left: 0;
     display: flex;
     justify-content: center;
   }
