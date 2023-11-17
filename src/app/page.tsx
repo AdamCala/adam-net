@@ -18,9 +18,23 @@ const courier_prime = Courier_Prime({
 const page = () => {
   const [pageState, setPageState] = useState("bottom");
 
+  useEffect(() => {
+    const handleWheel = (event: WheelEvent) => {
+      if (event.deltaY > 0) {
+        console.log("Scrolling down");
+        setPageState("top");
+      }
+    };
+    window.addEventListener("wheel", handleWheel);
+    return () => {
+      window.removeEventListener("wheel", handleWheel);
+    };
+  }, []);
+
   function handleClick() {
     setPageState((prevState) => (prevState === "bottom" ? "top" : "bottom"));
   }
+
   useEffect(() => {
     console.log(pageState);
     if (pageState == "top") {
