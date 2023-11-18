@@ -1,7 +1,19 @@
-import React from "react";
+"use client";
+import styles from "@/styles/links/index.module.scss";
+import { useEffect } from "react";
 
 const page = () => {
-  return <div>page</div>;
+  useEffect(() => {
+    window.scrollTo({
+      top: document.body.scrollHeight,
+    });
+  });
+  return (
+    <>
+      <div className={`${styles.main}`}></div>
+      <div className={`${styles.about}`}></div>
+    </>
+  );
 };
 
 export default page;

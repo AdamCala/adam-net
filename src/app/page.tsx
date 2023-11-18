@@ -18,6 +18,8 @@ const courier_prime = Courier_Prime({
 const page = () => {
   const [pageState, setPageState] = useState("bottom");
 
+  //   ! Scroll down on appropriate actions
+  //   & Scroll down with mousewheel
   useEffect(() => {
     const handleWheel = (event: WheelEvent) => {
       if (event.deltaY > 0) {
@@ -31,6 +33,7 @@ const page = () => {
     };
   }, []);
 
+  //   & Press arrow down
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "ArrowDown") {
@@ -44,6 +47,7 @@ const page = () => {
     };
   }, []);
 
+  //   & Swipe upwards on mobile
   const touchStartY = useRef<number | null>(null);
   useEffect(() => {
     const handleTouchStart = (event: TouchEvent) => {
@@ -71,10 +75,12 @@ const page = () => {
     };
   }, []);
 
+  //   & Click on scroll down button
   function handleClick() {
     setPageState((prevState) => (prevState === "bottom" ? "top" : "bottom"));
   }
 
+  //   ! Handle the scroll action every time pageState changes
   useEffect(() => {
     console.log(pageState);
     if (pageState == "top") {

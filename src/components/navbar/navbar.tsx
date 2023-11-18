@@ -11,6 +11,9 @@ const courier_prime = Courier_Prime({
 const navbar = () => {
   return (
     <div className={`${styles.navbarContainer} ${courier_prime.className}`}>
+      <Link className={`${styles.navbarLink}`} href={"/"}>
+        <p>About</p>
+      </Link>
       <Link className={`${styles.navbarLink}`} href={"/links"}>
         <p>Links</p>
       </Link>
