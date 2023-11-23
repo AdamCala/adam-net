@@ -1,7 +1,10 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
 import styles from "@/styles/components/navbar.module.scss";
 import { Courier_Prime } from "next/font/google";
+import { usePathname } from "next/navigation";
 
 const courier_prime = Courier_Prime({
   subsets: ["latin"],
@@ -9,19 +12,45 @@ const courier_prime = Courier_Prime({
 });
 
 const navbar = () => {
+  const pathname = usePathname();
+
   return (
     <div className={`${styles.navbarContainer} ${courier_prime.className}`}>
-      <Link className={`${styles.navbarLink}`} href={"/"}>
+      <Link
+        key="/"
+        className={`${styles.navbarLink} ${
+          pathname === "/" ? styles.currentLink : ""
+        }`}
+        href={"/"}
+      >
         <p>About</p>
       </Link>
-      <Link className={`${styles.navbarLink}`} href={"/links"}>
+      <Link
+        key="/links"
+        className={`${styles.navbarLink} ${
+          pathname === "/links" ? styles.currentLink : ""
+        }`}
+        href={"/links"}
+      >
         <p>Links</p>
       </Link>
-      <Link className={`${styles.navbarLink}`} href={"/projects"}>
+      <Link
+        key="/projects"
+        className={`${styles.navbarLink} ${
+          pathname === "/projects" ? styles.currentLink : ""
+        }`}
+        href={"/projects"}
+      >
         <p>Projects</p>
       </Link>
-      <Link className={`${styles.navbarLink}`} href={"/contact"}>
-        <p> Contact</p>
+      <Link
+        key="contact"
+        className={`${styles.navbarLink} ${
+          pathname === "/contact" ? styles.currentLink : ""
+        }`}
+        href={"/contact"}
+      >
+        <p>Contact</p>
       </Link>
     </div>
   );

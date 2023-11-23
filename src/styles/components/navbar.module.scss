@@ -17,6 +17,14 @@
   text-decoration: none;
 }
 
+.currentLink {
+  transition: ease-in-out;
+  transition-duration: 300ms;
+  color: rgba(56, 56, 58, 0.5);
+  text-shadow: 3px 3px 0px rgba(234, 118, 118, 0.25);
+  pointer-events: none;
+}
+
 // MOBILE
 @include media("<=600px") {
   .navbarContainer {
